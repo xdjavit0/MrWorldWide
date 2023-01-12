@@ -2,8 +2,8 @@ import styled from '@emotion/styled'
 import { withTheme } from '../../helpers/styles.helper'
 
 export const Frame = styled.div`
-width: 50%;
-height: 50%;
+width: fit-content;
+height: fit-content;
 ${withTheme('margin-left', 'sizes.rem02')}
 ${withTheme('padding', 'sizes.rem02')}
 ${withTheme('background-color', 'colors.olive')}
