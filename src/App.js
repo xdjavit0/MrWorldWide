@@ -8,11 +8,7 @@ function App() {
       <header className="App-header">
       <h1 className="Title"> Mr Worldwide </h1>
       </header>
-      <CardOFANew
-      title={Data.title}
-      photo={Data.photo}
-      description={Data.description}
-      />
+     
     </div>
   );
 }
