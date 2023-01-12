@@ -11,8 +11,8 @@ const CardOFANew = ({ title = null, description = null, photo = null }) => {
             alt='photoOfTheNew'
           />
           <Data className='dataContainer'>
-            <Title data-testid='titleOfTheNew' className='employeeFullName'>{title}</Title>
-            <Description data-testid='descriptionOfTheNew' className='employeeEmail'>{description}</Description>
+            <Title data-testid='titleOfTheNew' className='titleOfTheNew'>{title}</Title>
+            <Description data-testid='descriptionOfTheNew' className='descriptionOfTheNew'>{description}</Description>
           </Data>
         </Frame>
       )

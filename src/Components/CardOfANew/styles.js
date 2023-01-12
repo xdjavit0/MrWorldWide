@@ -1,28 +1,34 @@
-
 import styled from '@emotion/styled'
+import { withTheme } from '../../helpers/styles.helper'
 
 export const Frame = styled.div`
-width: fit-content;
-height: fit-content;
+width: 50%;
+height: 50%;
+${withTheme('margin-left', 'sizes.rem02')}
+${withTheme('padding', 'sizes.rem02')}
+${withTheme('background-color', 'colors.olive')}
 `
 export const PhotoOfTheNew = styled.img`
 display: inline-block; 
-width: 4rem;
-height: 4rem;
+${withTheme('width', 'sizes.rem4')}
+${withTheme('height', 'sizes.rem4')}
 `
 export const Data = styled.div`
 display: inline-block;
-margin-left: 0.5rem;
+${withTheme('margin-left', 'sizes.rem05')}
 position: relative;
-bottom: 0.5rem;
+${withTheme('bottom', 'sizes.rem05')}
 `
 export const Title = styled.p`
-font-weight: bold;
 text-align: center;
+${withTheme('font-weight', 'fontWeight.bold')}
+${withTheme('font-size', 'sizes.rem09')}
 
 `
 export const Description = styled.p`
 text-align: center;
 position: relative;
-bottom: 0.5rem;
+${withTheme('font-size', 'sizes.rem07')}
+${withTheme('bottom', 'sizes.rem05')}
+
 `
