@@ -8,17 +8,17 @@ import SelectCountryDropdown from './Components/SelectCountryDropdown/SelectCoun
 function App () {
   const [country, setCountry] = useState('United States')
 
-  const ChangeCountry=(country)=>{
-      setCountry(country)
+  const ChangeCountry = (country) => {
+    setCountry(country)
   }
   return (
     <MainFrame className='App'>
       <header className='App-header'>
-      <SelectCountryDropdown onChange={ChangeCountry}/>
-      <Title className='Title'> Mr Worldwide </Title>
-       
-      </header> 
-<p>Insert here a web page</p>
+        <SelectCountryDropdown onChange={ChangeCountry} />
+        <Title className='Title'> Mr Worldwide </Title>
+
+      </header>
+      <p>Insert here a web page</p>
     </MainFrame>
   )
 }
