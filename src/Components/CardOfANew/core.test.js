@@ -3,7 +3,7 @@ import CardOFANew from './CardOfANew'
 import data from './Moks/Mock'
 
 const card = data
-const componentToTest=()=>{
+const componentToTest = () => {
   return <CardOFANew title={card.title} description={card.description} photo={card.photo} />
 }
 test('CardOFANew shows the news title', () => {

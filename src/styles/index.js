@@ -4,6 +4,7 @@ export const worldwideTheme = {
     heading: 'var(--ff-primary-headline)'
   },
   colors: {
+    background:'#CBE8B9',
     coral: 'coral',
     sand: 'sand',
     olive: 'olive',
