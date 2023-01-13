@@ -1,35 +1,34 @@
-import { useState } from 'react'
-// import { Frame, PhotoOfTheNew, Data, Title, Description } from './styles.js'
-import {Countries as countriesToShow} from './ListOfCountries/Countries'
+import { Frame } from './styles.js'
+import { Countries as countriesToShow } from './ListOfCountries/Countries'
 
-const SelectCountryDropdown = ({selectedCountry = null}) => {
-    const [open, setOpen] = useState(false);
-    const [country, setCountry] = useState('United States');
-    const handleOpen = () => {
-      setOpen(!open);
+const SelectCountryDropdown = ({onChange = null}) => {
+
+  const setCountry = (country) => {
+    if(onChange!=null)
+    {
+      onChange(country)
     }
-  
-    return (
-      <div>
-        <button onClick={handleOpen}>Dropdown</button>
-        {open ? (
-        <ul className="CountriesList">
-         {countriesToShow.map((country, index) => {
-                return (
-                  <p
-                    key={index}  
-                  >{country}</p>
-                )
-              })
-}       
-        </ul>
-      ) : null}
-        {open ? <div></div> : <div></div>}
-      </div>
-    )
-  }
+}
+  return (
     
-  
+    <Frame>
+      <select
+        name='Country' defaultValue='United States' id='countrySelectorDropdown'
+        onChange={event => { setCountry(event.target.value) }}
+      >
+        {countriesToShow.map((country, index) => {
+          return (
+            <option
+              key={index}
+              value={country}
+            >
+              {country}
+            </option>
+          )
+        })}
+      </select>
+    </Frame>
+  )
+}
 
-
-  export default SelectCountryDropdown
+export default SelectCountryDropdown
