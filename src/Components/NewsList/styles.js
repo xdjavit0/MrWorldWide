@@ -2,8 +2,9 @@ import styled from '@emotion/styled'
 import { withTheme } from '../../helpers/styles.helper'
 
 export const Frame = styled.div`
-margin-left:8rem;
-width: 75%;
 ${withTheme('background-color', 'colors.olive')}
-display:flex;
+width: 49%;
+margin-top:2rem;
+margin-left:0.5rem;
+margin-right:0.5rem;
 `

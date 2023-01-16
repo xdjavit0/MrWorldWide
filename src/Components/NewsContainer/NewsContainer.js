@@ -1,11 +1,12 @@
 import { Frame } from './styles.js'
+import NewsList from '../NewsList/NewsList.js'
 
 const NewsContainer = () => {
    
     return (
       <Frame className='NewsContainer' data-testid='NewsContainer'>
-        <div className='InternationalNews'>International News</div>
-        <div className='LocalNews'>Local News</div>
+        <NewsList className='InternationalNews'></NewsList>
+        <NewsList className='LocalNews'></NewsList>
       </Frame>
     )
   
