@@ -4,13 +4,14 @@ export const worldwideTheme = {
     heading: 'var(--ff-primary-headline)'
   },
   colors: {
-    coral: 'var(--clr-coral)',
-    sand: 'var(--clr-sand)',
-    olive: 'var(--clr-olive)',
-    softBlack: 'var(--clr-softBlack)',
-    white: 'var(--clr-white)',
-    highLight: 'var(--clr-coral)',
-    defaultText: 'var(--clr-softBlack)'
+    background:'#CBE8B9',
+    coral: 'coral',
+    sand: 'sand',
+    olive: 'olive',
+    softBlack: 'softBlack',
+    white: 'white',
+    highLight: 'coral',
+    defaultText: 'softBlack'
   },
 
   sizes: {
@@ -28,6 +29,7 @@ export const worldwideTheme = {
     rem12: '1.2rem',
     rem15: '1.5rem',
     rem2: '2rem',
+    rem4: '4rem',
     rem6: '6rem'
   },
   fontWeight: {
