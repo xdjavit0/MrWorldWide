@@ -3,9 +3,9 @@ import { Frame } from './styles.js'
 import CardOfANew from '../CardOfANew/CardOfANew'
 // import data from './Mocks/DataMocks.js'
 import {Cards as GetCards}  from './APICalls/data'
-const NewsList = ({newsToList = null}) => {
+const NewsList = ({isInternational = false, localCountry = null, category = null}) => {
 
-  newsToList = GetCards()
+ let newsToList = GetCards()
     return (
       <Frame className='NewsList' data-testid='NewsList'>
     {newsToList != null

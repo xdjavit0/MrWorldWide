@@ -20,7 +20,7 @@ function App() {
         />
         <Title className="Title"> Mr Worldwide </Title>
       </header>
-      <NewsContainer></NewsContainer>
+      <NewsContainer localCountry={countryState}/>
     </MainFrame>
   )
 }
