@@ -4,7 +4,8 @@ import { Countries as countriesToShow } from './ListOfCountries/Countries'
 const SelectCountryDropdown = ({ onChange = null, selected = null }) => {
   const setCountry = (country) => {
     if (onChange != null) {
-      onChange(country)
+      const strings = country.split(',')
+      onChange(strings)
     }
   }
   return (
