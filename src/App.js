@@ -1,6 +1,5 @@
 import data from './components/NavigationBar/Mocks/Mock'
 import NavigationBar from './components/NavigationBar/index'
-
 import { MainFrame, Title } from './styles.js'
 import { useState } from 'react'
 // import CardOFANew from './Components/CardOfANew/CardOfANew'
