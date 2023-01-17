@@ -5,7 +5,7 @@ export const worldwideTheme = {
   },
   colors: {
     background:'#CBE8B9',
-    coral: 'coral',
+    coral: '#FF5656',
     sand: 'sand',
     olive: 'olive',
     softBlack: 'softBlack',

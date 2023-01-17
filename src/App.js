@@ -1,4 +1,3 @@
-import './App.css';
 import data from './components/NavigationBar/Mocks/Mock'
 import NavigationBar from './components/NavigationBar/index'
 
@@ -6,7 +5,7 @@ import { MainFrame, Title } from './styles.js'
 import { useState } from 'react'
 // import CardOFANew from './Components/CardOfANew/CardOfANew'
 // import Data from './Components/CardOfANew/Moks/Mock'
-import SelectCountryDropdown from './Components/SelectCountryDropdown/SelectCountryDropdown'
+import SelectCountryDropdown from './components/SelectCountryDropdown/SelectCountryDropdown'
 
 function App () {
   const [country, setCountry] = useState('United States')
