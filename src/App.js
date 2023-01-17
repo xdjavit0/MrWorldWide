@@ -1,9 +1,9 @@
+
 import { MainFrame, Title } from './styles.js'
 import { useState } from 'react'
 // import CardOFANew from './Components/CardOfANew/CardOfANew'
 // import Data from './Components/CardOfANew/Moks/Mock'
 import SelectCountryDropdown from './Components/SelectCountryDropdown/SelectCountryDropdown'
-import NewsContainer from './Components/NewsContainer/NewsContainer'
 
 function App () {
   const [countryState, setCountry] = useState(['United States', 'us'])
@@ -15,13 +15,11 @@ function App () {
   return (
     <MainFrame className='App'>
       <header className='App-header'>
-        <SelectCountryDropdown
-          onChange={ChangeCountry}
-          selected={countryState[0]}
-        />
+        <SelectCountryDropdown onChange={ChangeCountry} />
         <Title className='Title'> Mr Worldwide </Title>
+
       </header>
-      <NewsContainer localCountry={countryState.code} />
+      <p>Insert here a web page</p>
     </MainFrame>
   )
 }
