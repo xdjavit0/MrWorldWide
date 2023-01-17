@@ -2,14 +2,14 @@ import { MainFrame, Title } from './styles.js'
 import { useState } from 'react'
 // import CardOFANew from './Components/CardOfANew/CardOfANew'
 // import Data from './Components/CardOfANew/Moks/Mock'
-import SelectCountryDropdown from './Components/SelectCountryDropdown/SelectCountryDropdown'
-import NewsContainer from './Components/NewsContainer/NewsContainer'
+import SelectCountryDropdown from './components/SelectCountryDropdown/SelectCountryDropdown'
+import NewsContainer from './components/NewsContainer/NewsContainer'
 
 function App () {
   const [countryState, setCountry] = useState(['United States', 'us'])
 
   const ChangeCountry = (country) => {
-    setCountry(countryState[0] = country)
+    setCountry(countryState[0] = country[0], countryState[1] = country[1])
     console.log(countryState)
   }
   return (
