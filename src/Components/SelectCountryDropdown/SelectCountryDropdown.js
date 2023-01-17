@@ -17,10 +17,10 @@ const SelectCountryDropdown = ({ onChange = null, selected = null }) => {
           setCountry(event.target.value)
         }}
       >
-        {countriesToShow.map((country, index) => {
+        {Object.values(countriesToShow).map((country, index) => {
           return (
-            <option key={index} value={country}>
-              {country}
+            <option key={index} value={[country.name, country.code]}>
+              {country.name}
             </option>
           )
         })}
