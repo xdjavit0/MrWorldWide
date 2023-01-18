@@ -7,7 +7,7 @@ import NewsContainer from './Components/NewsContainer/NewsContainer'
 
 function App () {
   const [countryState, setCountry] = useState(['United States', 'us'])
-
+  console.log(countryState)
   const ChangeCountry = (country) => {
     setCountry(country)
   }
@@ -22,10 +22,10 @@ function App () {
         />
         <Title className='Title'> Mr Worldwide </Title>
       </header>
+
       <NewsContainer localCountry={countryState[1]} />
     </MainFrame>
   )
 }
 
 export default App
-//

@@ -1,16 +1,18 @@
 import { Frame, PhotoOfTheNew, Data, Title, Description } from './styles.js'
 
-const CardOFANew = ({ title = null, description = null, photo = null , url = null}) => {
+const CardOFANew = ({ title = null, description = null, photo = null, url = null }) => {
   if (title != null && description != null && photo != null) {
     return (
-      <Frame className='CardOFANew' data-testid='CardOFANew' onClick={() => {
-
-         window.open(url,'_blank')}}>
+      <Frame
+        className='CardOFANew' data-testid='CardOFANew' onClick={() => {
+          window.open(url, '_blank')
+        }}
+      >
         <PhotoOfTheNew
           data-testid='photoOfTheNew'
           src={photo}
           className='photoOfTheNew'
-          alt='photoOfTheNew'
+          alt='Photo Not Found'
         />
         <Data className='dataContainer'>
           <Title data-testid='titleOfTheNew' className='titleOfTheNew'>{title}</Title>
@@ -20,11 +22,10 @@ const CardOFANew = ({ title = null, description = null, photo = null , url = nul
     )
   }
 }
-const CheckDescriptionLenght=(textToCut)=>{
-  if(textToCut.length>50)
-  {
-    let textCut = textToCut.substring(0, 160);
-    textCut+='...'
+const CheckDescriptionLenght = (textToCut) => {
+  if (textToCut.length > 50) {
+    let textCut = textToCut.substring(0, 160)
+    textCut += '...'
     return textCut
   }
   return textToCut
