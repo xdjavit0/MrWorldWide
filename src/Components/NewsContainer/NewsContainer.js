@@ -1,11 +1,11 @@
 import { Frame } from './styles.js'
 import NewsList from '../NewsList/NewsList.js'
 
-const NewsContainer = (localCountry = null) => {
+const NewsContainer = (localCountry = null, category = null) => {
   return (
     <Frame className='NewsContainer' data-testid='NewsContainer'>
-      <NewsList isInternational className='InternationalNews' />
-      <NewsList localCountry={localCountry} className='LocalNews' />
+      <NewsList isInternational category={category} className='InternationalNews' />
+      <NewsList localCountry={localCountry} category={category} className='LocalNews' />
     </Frame>
   )
 }

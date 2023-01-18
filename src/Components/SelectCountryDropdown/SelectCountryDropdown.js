@@ -1,7 +1,7 @@
 import { Frame } from './styles.js'
 import { Countries as countriesToShow } from './ListOfCountries/Countries'
 
-const SelectCountryDropdown = ({ onChange = null, selected = [] }) => {
+const SelectCountryDropdown = ({ onChange = null, selected = null }) => {
   const setCountry = (country) => {
     if (onChange != null) {
       const strings = country.split(',')
@@ -9,11 +9,11 @@ const SelectCountryDropdown = ({ onChange = null, selected = [] }) => {
     }
   }
   return (
-    <Frame>{console.log(selected[0])}
+    <Frame>
       <select
         name='Country'
         id='countrySelectorDropdown'
-        value={selected}
+        valuefield={selected}
         onChange={(event) => {
           setCountry(event.target.value)
         }}

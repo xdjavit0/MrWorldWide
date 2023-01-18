@@ -7,7 +7,7 @@ const NewsList = ({ isInternational = false, localCountry = null, category = nul
   const newsToList = GetCards()
   return (
     <Frame className='NewsList' data-testid='NewsList'>
-      {newsToList != null
+      {isInternational
         ? (
             newsToList.map((card, index) => {
               return (
