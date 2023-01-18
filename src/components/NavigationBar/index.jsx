@@ -3,7 +3,6 @@ import { NavigationBarContainer } from './style'
 import { useState } from 'react'
 
 const NavigationBar = props => {
-  console.log(props.categories);
   const [selectedState, setSelectedState] = useState(0)
   const tabSelected = tab => {
     setSelectedState(tab)
