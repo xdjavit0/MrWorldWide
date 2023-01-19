@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import data from './Components/NavigationBar/Mocks/Mock'
 import NavigationBar from './Components/NavigationBar/index'
 import { MainFrame, Title } from './styles.js'
@@ -7,19 +8,13 @@ import { useCountry } from './Components/ApiLocalCountryReturm/ApiCallCountry'
 import NewsContainer from './Components/NewsContainer/NewsContainer'
 
 function App () {
-  const [countryState, setCountry] = useState(['United States', 'us'])
+  const [countryState, setCountry] = useCountry()
   const [category, setCategory] = useState('general')
-
-  const countryName = useCountry().country
-  let countryCode = useCountry().country_code
-  if (countryCode !== undefined) {
-    countryCode = countryCode.toLowerCase()
-  }
 
   const ChangeCategory = (category) => {
     setCategory(category)
-    console.log(category)
   }
+
   const ChangeCountry = (country) => {
     setCountry(country)
   }
@@ -35,8 +30,17 @@ function App () {
         <NavigationBar categories={data} onChange={ChangeCategory} />
 
       </header>
+      <NewsContainer localCountry={countryState[1]} category={category} />
     </MainFrame>
   )
 }
-// <NewsContainer localCountry={countryState[1]} category = {categoryState} />
+
 export default App
+
+/* const url = 'http://ipwho.is/'
+
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setCountry([response.data.country, response.data.country_code])
+    })
+  }, [url]) */
