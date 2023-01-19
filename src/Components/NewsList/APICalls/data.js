@@ -1,10 +1,11 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-// const url = 'http://api.mediastack.com/v1/news?access_key=9f44021f602fa7dbdd217ffaed2b519f'
 const url = 'http://api.mediastack.com/v1/news?access_key=9f44021f602fa7dbdd217ffaed2b519f'
-// const Categorybase = url + '&categories='
-// const Countrybase = url + '&countries='
-// const CountryAndCategorybase = url + '&countries=us&categories=health'
+
+// Note About Api Calls
+// CategorybaseRequest = url + '&categories=' + CategoryName
+// CountrybaseRequest = url + '&countries=' + CountryName
+// CountryAndCategoryRequest = url + '&countries='+ CountryName '&categories=' + CategoryName
 
 export const Cards = ({ localCountry = null, category = null }) => {
   const [cardsToList, setCardsToList] = useState([])

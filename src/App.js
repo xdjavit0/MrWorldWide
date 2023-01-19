@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState } from 'react'
 import data from './Components/NavigationBar/Mocks/Mock'
 import NavigationBar from './Components/NavigationBar/index'
 import { MainFrame, Title } from './styles.js'
