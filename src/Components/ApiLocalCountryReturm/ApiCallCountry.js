@@ -6,9 +6,9 @@ export const useCountry = () => {
   const [localCountry, setLocalCountry] = useState([])
   useEffect(() => {
     axios.get(url).then((response) => {
-      setLocalCountry(response.data)
+      setLocalCountry([response.data.country, response.data.country_code.toLowerCase()])
     })
   }, [url])
-  return localCountry
+  return [localCountry, setLocalCountry]
 }
 export default useCountry
