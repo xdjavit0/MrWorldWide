@@ -4,8 +4,9 @@ import { useState } from 'react'
 
 const NavigationBar = props => {
   const [selectedState, setSelectedState] = useState(0)
-  const tabSelected = tab => {
-    setSelectedState(tab)
+  const tabSelected = (id, name) => {
+    setSelectedState(id)
+    props.onChange(name)
   }
 
   return (
