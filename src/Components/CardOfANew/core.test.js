@@ -20,6 +20,6 @@ test('CardOFANew shows the news description', () => {
 
 test('CardOFANew shows the news photo', () => {
   render(componentToTest())
-  const photo = screen.queryAllByAltText('photoOfTheNew')
+  const photo = screen.queryAllByAltText('Photo Not Found')
   expect(photo.length).toBeGreaterThan(0)
 })

@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-const url = 'http://api.mediastack.com/v1/news?access_key=9f44021f602fa7dbdd217ffaed2b519f'
+const url = 'http://api.mediastack.com/v1/news?access_key=497f6ff2b119d31602c925a173afe550'
 
-// Note About Api Calls
+// Note About Api Call
 // CategorybaseRequest = url + '&categories=' + CategoryName
 // CountrybaseRequest = url + '&countries=' + CountryName
 // CountryAndCategoryRequest = url + '&countries='+ CountryName '&categories=' + CategoryName
