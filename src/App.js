@@ -13,18 +13,22 @@ function App () {
   if (countryCode !== undefined) {
     countryCode = countryCode.toLowerCase()
   }
-  console.log(countryCode)
   const [country, setCountry] = useState('United States')
-
+  const [category, setCategory] = useState('general')
+  const ChangeCategory = (category) => {
+    setCategory(category)
+  }
+  
   const ChangeCountry = (country) => {
     setCountry(country)
+
   }
   return (
     <MainFrame className='App'>
       <header className='App-header'>
         <SelectCountryDropdown onChange={ChangeCountry} />
         <Title className='Title'> Mr Worldwide </Title>
-        <NavigationBar categories={data} />
+        <NavigationBar categories={data} onChange = {ChangeCategory}/>
       </header>
       <p>Insert here a web page</p>
     </MainFrame>

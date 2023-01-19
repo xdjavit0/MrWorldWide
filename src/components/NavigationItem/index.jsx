@@ -6,7 +6,7 @@ const NavigationItem = ({ id = 0, name = 'John Doe', isSelected = false, onChang
   
   const select = (e) => {
     if (onChange !== null) {
-      onChange(id)
+      onChange(id,name)
     }
     isSelected = true
   }
