@@ -7,7 +7,7 @@ height: fit-content;
 display: flex; 
 ${withTheme('margin-left', 'sizes.rem02')}
 ${withTheme('padding', 'sizes.rem02')}
-${withTheme('background-color', 'colors.olive')}
+${withTheme('background-color', 'colors.sand')}
 `
 export const PhotoOfTheNew = styled.img`
 display: inline-block; 
