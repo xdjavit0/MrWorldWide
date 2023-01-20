@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const NavigationBar = props => {
   const [selectedState, setSelectedState] = useState(0)
-  const tabSelected = (id, name) => {
+  const tabSelected = (id,name) => {
     setSelectedState(id)
     props.onChange(name)
   }
@@ -12,7 +12,7 @@ const NavigationBar = props => {
   return (
     <NavigationBarContainer className='navigationBarContainer'>
       {props.categories.map((element, i) => {
-        return <NavigationItem key={i} id={i} name={element} isSelected={i === selectedState} onChange={tabSelected} />
+        return <NavigationItem key={i} id={i} name={element} isSelected={i === selectedState} onChange={tabSelected}/>
       })}
     </NavigationBarContainer>
   )

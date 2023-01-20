@@ -1,27 +1,28 @@
 import { Frame } from './styles.js'
 import { Countries as countriesToShow } from './ListOfCountries/Countries'
 
-const SelectCountryDropdown = ({ onChange = null, selected = null }) => {
+const SelectCountryDropdown = ({onChange = null}) => {
+
   const setCountry = (country) => {
-    if (onChange != null) {
-      const strings = country.split(',')
-      onChange(strings)
+    if(onChange!=null)
+    {
+      onChange(country)
     }
-  }
+}
   return (
+    
     <Frame>
       <select
-        name='Country'
-        id='countrySelectorDropdown'
-        valuefield={selected}
-        onChange={(event) => {
-          setCountry(event.target.value)
-        }}
+        name='Country' defaultValue='United States' id='countrySelectorDropdown'
+        onChange={event => { setCountry(event.target.value) }}
       >
-        {Object.values(countriesToShow).map((country, index) => {
+        {countriesToShow.map((country, index) => {
           return (
-            <option key={index} value={[country.name, country.code]}>
-              {country.name}
+            <option
+              key={index}
+              value={country}
+            >
+              {country}
             </option>
           )
         })}
