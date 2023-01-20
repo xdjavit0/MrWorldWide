@@ -1,16 +1,14 @@
 import { Frame } from './styles.js'
 import { Countries as countriesToShow } from './ListOfCountries/Countries'
 
-const SelectCountryDropdown = ({onChange = null}) => {
-
+const SelectCountryDropdown = ({ onChange = null }) => {
   const setCountry = (country) => {
-    if(onChange!=null)
-    {
+    if (onChange != null) {
       onChange(country)
     }
-}
+  }
   return (
-    
+
     <Frame>
       <select
         name='Country' defaultValue='United States' id='countrySelectorDropdown'
