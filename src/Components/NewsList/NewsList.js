@@ -11,11 +11,9 @@ const NewsList = ({ localCountry = null, category = null }) => {
       {
             newsToList.map((card, index) => {
               return (
-
                 <CardOfANew key={index} id={index} title={card.title} description={card.description} photo={card.image} url={card.url} />
               )
             })
-
         }
     </Frame>
   )
