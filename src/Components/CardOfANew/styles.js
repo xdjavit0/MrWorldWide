@@ -20,7 +20,7 @@ font-weight: bolder;
 float:left;
 min-height:269px;
 min-width:165px;
-max-width:470px;
+
 display: flex; 
 flex-wrap:wrap;
 
