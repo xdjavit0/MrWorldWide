@@ -30,6 +30,7 @@ ${withTheme('padding', 'sizes.rem02')}
 ${withTheme('background-color', 'colors.sand')}
 :hover{
     border: 1px solid black;
+    transform: scale(0.98);
 }
 `
 export const PhotoOfTheNew = styled.img`
