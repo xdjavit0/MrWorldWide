@@ -35,6 +35,7 @@ ${withTheme('background-color', 'colors.sand')}
 export const PhotoOfTheNew = styled.img`
 display: inline-block; 
 margin-top:0.5rem;
+float:left;
 ${withTheme('width', 'sizes.rem5')}
 ${withTheme('height', 'sizes.rem5')}
 `
