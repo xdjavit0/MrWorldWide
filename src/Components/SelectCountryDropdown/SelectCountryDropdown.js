@@ -14,7 +14,7 @@ const SelectCountryDropdown = ({ onChange = null, selected = null }) => {
         name='Country'
         id='countrySelectorDropdown'
         valuefield={selected}
-        onChange={(event) => {
+        onBlur={(event) => {
           setCountry(event.target.value)
         }}
       >
