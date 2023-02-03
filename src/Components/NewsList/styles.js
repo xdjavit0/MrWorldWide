@@ -3,8 +3,13 @@ import { withTheme } from '../../helpers/styles.helper'
 
 export const Frame = styled.div`
 ${withTheme('background-color', 'colors.sand')}
-width: 49%;
-margin-top:2rem;
-margin-left: auto;
-margin-right: auto;
+width: 98%;
+display:flex;
+justify-content: flex-start;
+align-content:stretch;
+align-items:center;
+flex-direction:column;
+// margin-top:2rem;
+// margin-left: auto;
+// margin-right: auto;
 `

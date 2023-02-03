@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { withTheme } from '../../helpers/styles.helper'
 
 export const Frame = styled.div`
-width: fit-content;
+width: 100%;
 height: fit-content;
 box-sizing: border-box;
 background: rgba(217, 217, 217, 0.58);
@@ -17,32 +17,33 @@ align-items: center;
 justify-content: center;
 user-select: none;
 font-weight: bolder;
+float:left;
+min-height:269px;
+min-width:165px;
+
 display: flex; 
+flex-wrap:wrap;
+
 ${withTheme('margin-left', 'sizes.rem02')}
 ${withTheme('margin-bottom', 'sizes.rem05')}
 ${withTheme('padding', 'sizes.rem02')}
 ${withTheme('background-color', 'colors.sand')}
 :hover{
-   
-        border: 1px solid black;
-        transform: scale(1.05);
-      
+    border: 1px solid black;
+    transform: scale(0.98);
 }
-:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-  }
 `
 export const PhotoOfTheNew = styled.img`
 display: inline-block; 
-margin-top:0.5rem;
-${withTheme('width', 'sizes.rem5')}
-${withTheme('height', 'sizes.rem5')}
+// margin-top:0.5rem;
+width:50%;
+min-width:130px;
 `
 export const Data = styled.div`
-display: inline-block;
-${withTheme('margin-left', 'sizes.rem05')}
-position: relative;
-${withTheme('bottom', 'sizes.rem05')}
+display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 export const Title = styled.p`
 text-align: justify;
@@ -51,6 +52,7 @@ ${withTheme('font-size', 'sizes.rem09')}
 
 `
 export const Description = styled.p`
+line-break: auto;
 text-align: justify;
 position: relative;
 ${withTheme('font-size', 'sizes.rem07')}

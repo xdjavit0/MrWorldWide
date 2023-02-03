@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { useState, useEffect } from 'react'
 const url = 'http://api.mediastack.com/v1/news?access_key=115b3dca9740bd61d350f3a86e9e58b5'
 
@@ -12,9 +11,9 @@ export const Cards = ({ localCountry = null, category = null }) => {
   const newUrl = checkNewUrl(localCountry, category)
 
   useEffect(() => {
-    axios.get(newUrl).then((response) => {
-      setCardsToList(response.data.data)
-    })
+    fetch(newUrl)
+      .then(response => response.json())
+      .then(data => setCardsToList(data.data))
   }, [newUrl])
   return (cardsToList)
 }
@@ -29,3 +28,15 @@ const checkNewUrl = (localCountry, category) => {
   }
   return newUrl
 }
+
+// export const Cards = ({ localCountry = null, category = null }) => {
+//   const [cardsToList, setCardsToList] = useState([])
+//   const newUrl = checkNewUrl(localCountry, category)
+
+//   useEffect(() => {
+//     axios.get(newUrl).then((response) => {
+//       setCardsToList(response.data.data)
+//     })
+//   }, [newUrl])
+//   return (cardsToList)
+// }
