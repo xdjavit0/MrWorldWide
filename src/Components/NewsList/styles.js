@@ -13,3 +13,12 @@ flex-direction:column;
 // margin-left: auto;
 // margin-right: auto;
 `
+export const LoadingText = styled.div`
+${withTheme('background-color', 'colors.sand')}
+width: 98%;
+display:flex;
+justify-content: flex-start;
+align-content:stretch;
+align-items:center;
+flex-direction:column;
+`

@@ -1,21 +1,24 @@
-import { useState, useEffect } from 'react'
-const url = 'http://api.mediastack.com/v1/news?access_key=115b3dca9740bd61d350f3a86e9e58b5'
+const url = 'http://api.mediastack.com/v1/news?access_key=ba368377a5f381870e4fcb854e42a8ab'
 
-// Note About Api Call
+// Notes About Api Call
 // CategorybaseRequest = url + '&categories=' + CategoryName
 // CountrybaseRequest = url + '&countries=' + CountryName
 // CountryAndCategoryRequest = url + '&countries='+ CountryName '&categories=' + CategoryName
 
-export const Cards = ({ localCountry = null, category = null }) => {
-  const [cardsToList, setCardsToList] = useState([])
-  const newUrl = checkNewUrl(localCountry, category)
-
-  useEffect(() => {
-    fetch(newUrl)
-      .then(response => response.json())
-      .then(data => setCardsToList(data.data))
-  }, [newUrl])
-  return (cardsToList)
+export const GetCards = async ({ localCountry = null, category = null }) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const newUrl = checkNewUrl(localCountry, category)
+      const response = await fetch(newUrl)
+      if (!response.ok) {
+        reject(new Error(`Error: ${response.status}`))
+      }
+      const data = await response.json()
+      resolve(data.data)
+    } catch (error) {
+      reject(error)
+    }
+  })
 }
 
 const checkNewUrl = (localCountry, category) => {
@@ -28,6 +31,22 @@ const checkNewUrl = (localCountry, category) => {
   }
   return newUrl
 }
+
+//   useEffect(() => {
+//     fetch(newUrl)
+//       .then(response => response.json())
+//       .then(data => setCardsToList(data.data))
+//   }, [newUrl])
+//   return (cardsToList)
+// }
+
+// useEffect(() => {
+//   fetch(newUrl)
+//     .then(response => response.json())
+//     .then(data => setCardsToList(data.data))
+// }, [newUrl])
+// return (cardsToList)
+// }
 
 // export const Cards = ({ localCountry = null, category = null }) => {
 //   const [cardsToList, setCardsToList] = useState([])
