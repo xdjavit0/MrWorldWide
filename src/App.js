@@ -17,7 +17,6 @@ function App () {
       setCountry([data.country, data.country_code.toLowerCase()])
       setStatus('sucess')
     })
-    setStatus('loading')
   }, [])
 
   const ChangeCategory = (category) => {
