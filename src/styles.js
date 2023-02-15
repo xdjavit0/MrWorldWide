@@ -15,3 +15,10 @@ font-family: monospace;
 font-size: 3rem;
 font-weight: bold;
 `
+export const LoadingFrame = styled.h1`
+// margin-left: 7rem;
+font-family: monospace;
+font-size: 2rem;
+font-weight: bold;
+text-align: center;
+`

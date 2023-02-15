@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import data from './Components/NavigationBar/Mocks/Mock'
 import NavigationBar from './Components/NavigationBar/index'
-import { MainFrame, Title } from './styles.js'
+import { MainFrame, Title, LoadingFrame } from './styles.js'
 import SelectCountryDropdown from './Components/SelectCountryDropdown/SelectCountryDropdown'
 import { GetCountry } from './Components/ApiLocalCountryReturm/ApiCallCountry'
 import NewsContainer from './Components/NewsContainer/NewsContainer'
@@ -9,9 +9,15 @@ import NewsContainer from './Components/NewsContainer/NewsContainer'
 function App () {
   const [countryState, setCountry] = useState([])
   const [category, setCategory] = useState('general')
+  const [status, setStatus] = useState('loading')
 
   useEffect(() => {
-    GetCountry().then(data => setCountry([data.country, data.country_code.toLowerCase()]))
+    setStatus('loading')
+    GetCountry().then(data => {
+      setCountry([data.country, data.country_code.toLowerCase()])
+      setStatus('sucess')
+    })
+    setStatus('loading')
   }, [])
 
   const ChangeCategory = (category) => {
@@ -21,7 +27,7 @@ function App () {
   const ChangeCountry = (country) => {
     setCountry(country)
   }
-
+  if (status === 'loading') return (<LoadingFrame>Fetching news for you...</LoadingFrame>)
   return (
 
     <MainFrame className='App'>

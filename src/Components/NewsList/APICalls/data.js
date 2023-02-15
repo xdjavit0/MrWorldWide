@@ -1,4 +1,4 @@
-const url = 'http://api.mediastack.com/v1/news?access_key=ba368377a5f381870e4fcb854e42a8ab'
+const url = 'http://api.mediastack.com/v1/news?access_key=52de6e225915d0e9eda182d38ad6e99c'
 
 // Notes About Api Call
 // CategorybaseRequest = url + '&categories=' + CategoryName
@@ -6,22 +6,20 @@ const url = 'http://api.mediastack.com/v1/news?access_key=ba368377a5f381870e4fcb
 // CountryAndCategoryRequest = url + '&countries='+ CountryName '&categories=' + CategoryName
 
 export const GetCards = async ({ localCountry = null, category = null }) => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const newUrl = checkNewUrl(localCountry, category)
-      const response = await fetch(newUrl)
-      if (!response.ok) {
-        reject(new Error(`Error: ${response.status}`))
-      }
-      const data = await response.json()
-      resolve(data.data)
-    } catch (error) {
-      reject(error)
-    }
-  })
+  const newUrl = GetNewUrl(localCountry, category)
+  const response = await fetch(newUrl)
+  if (!response.ok) {
+    throw new Error({
+      message: 'Something went wrong',
+      statusCode: response.status
+
+    })
+  }
+  const jsonData = await response.json()
+  return jsonData.data
 }
 
-const checkNewUrl = (localCountry, category) => {
+const GetNewUrl = (localCountry, category) => {
   let newUrl = url
   if (localCountry !== null && localCountry !== undefined) {
     newUrl += '&countries=' + localCountry
@@ -31,6 +29,22 @@ const checkNewUrl = (localCountry, category) => {
   }
   return newUrl
 }
+
+// export const GetCards = async ({ localCountry = null, category = null }) => {
+//   return new Promise(async (resolve, reject) => {
+//     try {
+//       const newUrl = checkNewUrl(localCountry, category)
+//       const response = await fetch(newUrl)
+//       if (!response.ok) {
+//         reject(new Error(`Error: ${response.status}`))
+//       }
+//       const data = await response.json()
+//       resolve(data.data)
+//     } catch (error) {
+//       reject(error)
+//     }
+//   })
+// }
 
 //   useEffect(() => {
 //     fetch(newUrl)

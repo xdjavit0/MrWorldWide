@@ -2,17 +2,19 @@
 const url = 'https://ipwho.is/'
 
 export const GetCountry = async () => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const response = await fetch(url)
-      if (!response.ok) {
-        reject(new Error(`Error: ${response.status}`))
+  return new Promise((resolve, reject) => {
+    setTimeout(async () => {
+      try {
+        const response = await fetch(url)
+        if (!response.ok) {
+          reject(new Error(`Error: ${response.status}`))
+        }
+        const data = await response.json()
+        resolve(data)
+      } catch (error) {
+        reject(error)
       }
-      const data = await response.json()
-      resolve(data)
-    } catch (error) {
-      reject(error)
-    }
+    }, 2000)
   })
 }
 
