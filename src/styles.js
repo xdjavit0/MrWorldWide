@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { withTheme } from './helpers/styles.helper'
 
 export const MainFrame = styled.div`
 // margin-left: auto;
