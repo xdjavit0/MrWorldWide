@@ -20,5 +20,5 @@ export const useFetchData = ({ key, action }) => {
     // eslint-disable-next-line
   }, [key])
 
-  return [data, isLoaded, isError]
+  return [data, isLoaded, isError, setData]
 }

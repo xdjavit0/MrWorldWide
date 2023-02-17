@@ -11,7 +11,7 @@ const SelectCountryDropdown = ({ onChange = null, selected = null }) => {
   const setCountry = (country) => {
     if (onChange != null) {
       const strings = country.split(',')
-      onChange(strings)
+      onChange({ country: strings[0], country_code: strings[1] })
       setcountrySelected(strings)
     }
   }

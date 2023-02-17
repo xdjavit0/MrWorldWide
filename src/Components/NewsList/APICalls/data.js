@@ -1,4 +1,4 @@
-const url = 'http://api.mediastack.com/v1/news?access_key=14844e60fc53ac47b9085093167a7f4f'
+const url = 'http://api.mediastack.com/v1/news?access_key=9f44021f602fa7dbdd217ffaed2b519f'
 
 // Notes About Api Call
 // CategorybaseRequest = url + '&categories=' + CategoryName

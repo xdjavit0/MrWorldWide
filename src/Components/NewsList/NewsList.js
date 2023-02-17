@@ -9,13 +9,14 @@ const NewsList = ({ localCountry = null, category = null }) => {
   // const [data, setData] = useState([])
   // const [status, setStatus] = useState('loading')
 
-  const [data, isLoaded, isError] = useFetchData({
+  const [data, isLoaded, isError, setData] = useFetchData({
+    key: localCountry,
     action: GetCards({ localCountry, category })
   })
 
   if (!isLoaded) return <p>Loading...</p>
 
-  if (isError) {
+  if (isError || data === null) {
     return <p>Error mi pana</p>
   }
   return (
